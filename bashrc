@@ -14,14 +14,6 @@ function my_git_ps1()
 
 [[ -f ~/.stingrc ]] && . ~/.stingrc
 
-if [[ "${CALLID}" = "" ]] && [[ -t 0 ]]
-then
-	stty susp '^Z'
-	stty erase '^H'
-	stty kill '^U'
-	stty quit '^C'
-fi
-
 HAVE_GIT_PS1=0
 for f in git-completion.bash git-prompt.sh
 do
@@ -40,7 +32,7 @@ done
 
 if [[ ${TERM} == xterm* ]] || [[ ${TERM} == vt100 ]]
 then
-	[[ -t 0 ]] && echo '^[)0'
+	[[ -t 0 ]] && echo ')0'
 	# to undo this do:
 	# Ctrl-V ESC
 	# echo '^[c'
@@ -69,15 +61,18 @@ else
 	export PS1="${CYAN}\h${GREEN}${TAG}${BLUE}\$(my_git_ps1 ${HAVE_GIT_PS1}) ${YELLOW}\W${CYAN}>${BLACK} "
 fi
 
-[[ "${CORESTING}" != "" ]] && export DG_ARCHIVE_DIR="${CORESTING}/$(basename ${DG_ARCHIVE_DIR})"
-
 [[ $PATH != *"${HOME}/bin"* ]] && export PATH="${PATH}:${HOME}/bin"
 
 umask u=rwx,g=rx,o=rx
-
-rsync .ssh/good_hosts .ssh/known_hosts
+rsync ${HOME}/.ssh/good_hosts ${HOME}/.ssh/known_hosts
 
 set -o vi
 
-alias rm='rm -i'
 alias status='svn status'
+alias up='svn update -r HEAD'
+
+export GOBIN=${HOME}/bin
+[[ ":${PATH}:" != *":${GOBIN}:"* ]] && PATH="${PATH}:${GOBIN}"
+
+alias rm='rm -i'
+

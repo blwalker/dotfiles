@@ -27,15 +27,21 @@ set hlsearch
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
-:nmap <silent> <F4> :w<CR>:!clear && mk<CR>
+:nmap <silent> <F4> :w<CR>:!clear && make<CR>
 :nmap <silent> <F5> :w<CR>:!clear && cmprun -d %<CR>
 :nmap <silent> <F6> :w<CR>:!clear && cmprun -c %<CR>
 
 syntax on
 
-colorscheme blw
+if v:version >= 700
+	colorscheme blw
+else
+	colorscheme default
+endif
+
 let loaded_matchparen = 0
 let c_comment_strings = 1
+let g:vim_json_syntax_conceal = 0
 
 if has("autocmd")
   augroup vimrcEx

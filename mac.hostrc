@@ -30,7 +30,7 @@ export JAVA_HOME="/usr/local/jdk"
 
 [[ "${PATH}" != *"${GOROOT}/bin"* ]] && PATH="${PATH}:${GOROOT}/bin"
 [[ "${PATH}" != *"${HOME}/code/go/bin"* ]] && PATH="${PATH}:${HOME}/code/go/bin"
-[[ -d "/Applications/VMware Fusion.app"]] && [[ "${PATH}" != *"VMware Fusion.app"* ]] && PATH="${PATH}:/Applications/VMware Fusion.app/Contents/Library"
+[[ -d "/Applications/VMware Fusion.app" ]] && [[ "${PATH}" != *"VMware Fusion.app"* ]] && PATH="${PATH}:/Applications/VMware Fusion.app/Contents/Library"
 
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
