@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# a - black
+# b - red
+# c - green
+# d - brown
+# e - blue
+# f - magenta
+# g - cyan
+# h - light grey
+# x - default foreground/background
+dir_c="cx"
+sym_c="fx"
+socket_c="ex"
+pipe_c="dx"
+exe_c="bx"
+block_c="ag"
+char_c="bd"
+setuid_c="hb"
+setgid_c="ag"
+sticky_dir_c="ad"
+no_sticky_dir_c="ac"
+
+export LSCOLORS="${dir_c}${sym_c}${socket_c}${pipe_c}${exe_c}${block_c}${char_c}${setuid_c}${setgid_c}${sticky_dir_c}${no_sticky_dir_c}"
+export CLICOLOR=1
+export GOROOT="/usr/local/go"
+export GOPATH="${HOME}/code/go"
+export M2_HOME="/usr/local"
+export JAVA_HOME="/usr/local/jdk"
+
+[[ "${PATH}" != *"${GOROOT}/bin"* ]] && PATH="${PATH}:${GOROOT}/bin"
+[[ "${PATH}" != *"${HOME}/code/go/bin"* ]] && PATH="${PATH}:${HOME}/code/go/bin"
+[[ -d "/Applications/VMware Fusion.app"]] && [[ "${PATH}" != *"VMware Fusion.app"* ]] && PATH="${PATH}:/Applications/VMware Fusion.app/Contents/Library"
