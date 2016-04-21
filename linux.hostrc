@@ -1,0 +1,11 @@
+#!/bin/bash
+
+[[ ${TERM} != wy* ]] && export TERM=xterm-256color
+[[ ${CFLAGS} != *"-g"* ]] && export CFLAGS="${CFLAGS} -g"
+
+export WORK=/u/brentw
+
+alias egrep='egrep --color'
+alias fgrep='fgrep --color'
+alias grep='grep --color'
+alias ls='ls --color'
