@@ -25,6 +25,8 @@ values."
 	 ;; ----------------------------------------------------------------
 	 ;; auto-completion
 	 ;; better-defaults
+	 (c-c++ :variables
+			c-c++-default-mode-for-headers 'c++-mode)
 	 emacs-lisp
 	 git
 	 go
