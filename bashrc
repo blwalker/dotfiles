@@ -32,7 +32,7 @@ done
 
 if [[ ${TERM} == xterm* ]] || [[ ${TERM} == vt100 ]]
 then
-	[[ -t 0 ]] && echo ')0'
+	[[ -t 0 ]] && echo 'm'
 	# to undo this do:
 	# Ctrl-V ESC
 	# echo '^[c'
@@ -70,9 +70,6 @@ set -o vi
 
 alias status='svn status'
 alias up='svn update -r HEAD'
-
-export GOBIN=${HOME}/bin
-[[ ":${PATH}:" != *":${GOBIN}:"* ]] && PATH="${PATH}:${GOBIN}"
 
 alias rm='rm -i'
 

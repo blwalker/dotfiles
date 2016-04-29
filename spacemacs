@@ -27,10 +27,12 @@ values."
 	 ;; better-defaults
 	 (c-c++ :variables
 			c-c++-default-mode-for-headers 'c++-mode)
+	 csharp
 	 emacs-lisp
 	 git
 	 go
 	 html
+	 java
 	 javascript
 	 markdown
 	 org
