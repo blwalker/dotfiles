@@ -262,6 +262,7 @@ you should place you code here."
    tab-width 4
    tab-always-indent 'complete
    evil-shift-width 4
+   global-evil-search-highlight-persist t
    )
   (defun my-php-mode-hook ()
 	(setq indent-tabs-mode t)
@@ -274,6 +275,10 @@ you should place you code here."
 	   (sp-pair "{" nil :actions :rem)
 	   (sp-pair "'" nil :actions :rem)
 	   (sp-pair "\"" nil :actions :rem)))
+  (setq scroll-margin 5
+		scroll-conservatively 9999
+		scroll-step 1)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
