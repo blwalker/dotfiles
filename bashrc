@@ -8,6 +8,8 @@ function my_git_ps1()
 	fi
 }
 
+export TAG=""
+
 [[ -f ~/.hostrc ]] && . ~/.hostrc
 
 [[ -f ~/.complrc ]] && . ~/.complrc
@@ -38,7 +40,6 @@ then
 	# echo '^[c'
 fi
 
-TAG=""
 GREEN="\[\e[32m\]"
 BLUE="\[\e[1;34m\]"
 LIGHT_BLUE="\[\e[38;5;39m\]"
