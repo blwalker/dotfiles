@@ -38,6 +38,7 @@ values."
 	 org
 	 osx
 	 php
+	 sql
 	 themes-megapack
 	 ;; (shell :variables
 	 ;;		   shell-default-height 30
