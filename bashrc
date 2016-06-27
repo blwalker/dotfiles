@@ -71,6 +71,7 @@ set -o vi
 
 alias status='svn status'
 alias up='svn update -r HEAD'
+alias sd='svn diff | cdiff'
 
 alias rm='rm -i'
 
