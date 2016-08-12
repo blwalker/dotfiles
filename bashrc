@@ -19,17 +19,14 @@ export TAG=""
 HAVE_GIT_PS1=0
 for f in git-completion.bash git-prompt.sh
 do
-	COMP="/usr/share/git-core"
-
-	if [[ -f ${COMP}/contrib/completion/$f ]]
-	then
-		source ${COMP}/contrib/completion/$f
-		HAVE_GIT_PS1=1
-	elif [[ -f /Applications/Xcode.app/Contents/Developer${COMP}/$f ]]
-	then
-		source /Applications/Xcode.app/Contents/Developer${COMP}/$f
-		HAVE_GIT_PS1=1
-	fi
+	for d in "/usr/local/share/git-core/contrib/completion" "/usr/local/etc/bash_completion.d" "/usr/share/git-core/contrib/completion" "/Applications/Xcode.app/Contents/Developer/usr/share/git-core"
+	do
+		if [[ -f "${d}/${f}" ]]
+		then
+			source "${d}/${f}"
+			HAVE_GIT_PS1=1
+		fi
+	done
 done
 
 if [[ ${TERM} == xterm* ]] || [[ ${TERM} == vt100 ]]
