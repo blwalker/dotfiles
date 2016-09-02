@@ -66,9 +66,5 @@ rsync ${HOME}/.ssh/good_hosts ${HOME}/.ssh/known_hosts
 
 set -o vi
 
-alias status='svn status'
-alias up='svn update -r HEAD'
-alias sd='svn diff | cdiff'
-
 alias rm='rm -i'
 
