@@ -6,8 +6,6 @@ promptinit
 
 setopt PROMPT_SUBST
 
-[[ -f ~/.hostrc ]] && source ~/.hostrc
-
 GREEN="[32m"
 BLUE="[1;34m"
 LIGHT_BLUE="[38;5;39m"
