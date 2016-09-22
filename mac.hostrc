@@ -32,6 +32,7 @@ export GOROOT="/usr/local/go"
 export GOPATH="${HOME}/code/go"
 export JAVA_HOME="/usr/local/jdk"
 export HOMEBREW_GITHUB_API_TOKEN="771fc2bac78e55d8bcccda06370f6561ec288418"
+export PROJDIR="${HOME}/Documents/Google Drive/Projects"
 
 addPath "${GOROOT}/bin"
 addPath "${HOME}/code/go/bin"
