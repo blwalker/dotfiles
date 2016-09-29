@@ -116,7 +116,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-							   :size 14
+							   :size 16
 							   :weight normal
 							   :width normal
 							   :powerline-scale 1.1)
@@ -269,7 +269,8 @@ you should place you code here."
    )
   (defun my-php-mode-hook ()
 	(setq indent-tabs-mode t)
-	(setq tab-width 4))
+	(setq tab-width 4)
+	(setq tab-always-indent 'complete))
   (add-hook 'php-mode-hook 'my-php-mode-hook)
   (eval-after-load 'smartparens
 	'(progn
@@ -278,9 +279,5 @@ you should place you code here."
 	   (sp-pair "{" nil :actions :rem)
 	   (sp-pair "'" nil :actions :rem)
 	   (sp-pair "\"" nil :actions :rem)))
-  (setq scroll-margin 5
-		scroll-conservatively 9999
-		scroll-step 1)
-
   )
 
