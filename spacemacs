@@ -29,6 +29,7 @@ values."
 			c-c++-default-mode-for-headers 'c++-mode)
 	 colors
 	 csharp
+	 csv
 	 emacs-lisp
 	 git
 	 go
@@ -41,6 +42,7 @@ values."
 	 php
 	 sql
 	 themes-megapack
+	 typescript
 	 ;; (shell :variables
 	 ;;		   shell-default-height 30
 	 ;;		   shell-default-position 'bottom)
@@ -280,4 +282,3 @@ you should place you code here."
 	   (sp-pair "'" nil :actions :rem)
 	   (sp-pair "\"" nil :actions :rem)))
   )
-
