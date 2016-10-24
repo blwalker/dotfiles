@@ -280,5 +280,6 @@ you should place you code here."
 	   (sp-pair "[" nil :actions :rem)
 	   (sp-pair "{" nil :actions :rem)
 	   (sp-pair "'" nil :actions :rem)
-	   (sp-pair "\"" nil :actions :rem)))
+	   (sp-pair "\"" nil :actions :rem)
+	   (sp-pair "\\\"" nil :actions :rem)))
   )
