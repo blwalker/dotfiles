@@ -252,6 +252,23 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default
+   indent-line-function 'insert-tab
+   indent-tabs-mode t
+   tab-width 4
+   tab-always-indent 'complete
+   evil-shift-width 4
+   global-evil-search-highlight-persist t
+   )
+  (add-hook 'go-mode-hook
+		(lambda ()
+			(setq tab-width 4)
+			(setq indent-tabs-mode t)))
+  (add-hook 'php-mode-hook
+	   (lambda ()
+		 (setq indent-tabs-mode t)
+		 (setq tab-width 4)
+		 (setq tab-always-indent 'complete)))
   )
 
 (defun dotspacemacs/user-config ()
@@ -261,19 +278,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
-  (setq-default
-   indent-line-function 'insert-tab
-   indent-tabs-mode t
-   tab-width 4
-   tab-always-indent 'complete
-   evil-shift-width 4
-   global-evil-search-highlight-persist t
-   )
-  (defun my-php-mode-hook ()
-	(setq indent-tabs-mode t)
-	(setq tab-width 4)
-	(setq tab-always-indent 'complete))
-  (add-hook 'php-mode-hook 'my-php-mode-hook)
   (eval-after-load 'smartparens
 	'(progn
 	   (sp-pair "(" nil :actions :rem)
