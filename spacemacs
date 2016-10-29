@@ -23,16 +23,17 @@ values."
 	 ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
 	 ;; <M-m f e R> (Emacs style) to install them.
 	 ;; ----------------------------------------------------------------
-	 ;; auto-completion
+	 auto-completion
 	 ;; better-defaults
 	 (c-c++ :variables
-			c-c++-default-mode-for-headers 'c++-mode)
+	    c-c++-default-mode-for-headers 'c++-mode)
 	 colors
 	 csharp
 	 csv
 	 emacs-lisp
 	 git
-	 go
+	 (go :variables
+	    go-tab-width 4)
 	 html
 	 java
 	 javascript
@@ -41,13 +42,13 @@ values."
 	 osx
 	 php
 	 sql
-	 themes-megapack
+	 ;; themes-megapack
 	 typescript
 	 ;; (shell :variables
 	 ;;		   shell-default-height 30
 	 ;;		   shell-default-position 'bottom)
 	 ;; spell-checking
-	 ;; syntax-checking
+	 syntax-checking
 	 ;; version-control
 	 )
    ;; List of additional packages that will be installed without being
@@ -260,10 +261,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
    evil-shift-width 4
    global-evil-search-highlight-persist t
    )
-  (add-hook 'go-mode-hook
-		(lambda ()
-			(setq tab-width 4)
-			(setq indent-tabs-mode t)))
   (add-hook 'php-mode-hook
 	   (lambda ()
 		 (setq indent-tabs-mode t)
