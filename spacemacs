@@ -262,14 +262,22 @@ before packages are loaded. If you are unsure, you should try in setting them in
    evil-shift-width 4
    global-evil-search-highlight-persist t
    )
+
   (defun my-tab-hook ()
     (setq indent-tabs-mode t
           tab-width 4
-          tab-always-indent 'complete))
+          tab-always-indent 'complete)
+   )
+
+  (defun my-c-hook ()
+    (my-tab-hook)
+    (setq c-basic-offset 4)
+    (setq c-indent-level 4)
+    )
 
   (add-hook 'php-mode-hook 'my-tab-hook)
-  (add-hook 'c-mode-hook 'my-tab-hook)
-  (add-hook 'c++-mode 'my-tab-hook)
+  (add-hook 'c-mode-hook 'my-c-hook)
+  (add-hook 'c++-mode-hook 'my-c-hook)
   )
 
 (defun dotspacemacs/user-config ()
