@@ -261,7 +261,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
    tab-always-indent 'complete
    evil-shift-width 4
    global-evil-search-highlight-persist t
-   )
+   js2-basic-offset 4
+   js-indent-level 4)
 
   (defun my-tab-hook ()
     (setq indent-tabs-mode t
@@ -276,8 +277,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
     )
 
   (add-hook 'php-mode-hook 'my-tab-hook)
-  (add-hook 'c-mode-hook 'my-c-hook)
-  (add-hook 'c++-mode-hook 'my-c-hook)
+  (add-hook 'c-mode-hook 'my-tab-hook)
+  (add-hook 'c++-mode 'my-tab-hook)
+  (add-hook 'js2-mode-hook 'my-tab-hook)
   )
 
 (defun dotspacemacs/user-config ()
