@@ -8,6 +8,7 @@ You should not put any user code in this function besides modifying the variable
 values."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
+
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
@@ -40,7 +41,7 @@ values."
 	 markdown
 	 org
 	 osx
-	 php
+	 ;; php
    rust
 	 sql
 	 ;; themes-megapack
@@ -276,10 +277,27 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (setq c-indent-level 4)
     )
 
-  (add-hook 'php-mode-hook 'my-tab-hook)
+  (defun my-web-hook ()
+    (my-tab-hook)
+    (setq web-mode-code-indent-offset 4)
+    (setq web-mode-css-indent-offset 4)
+    (setq web-mode-markup-indent-offset 4)
+    )
+
+  (defun my-php-setup ()
+    (web-mode)
+    (my-tab-hook)
+    (setq web-mode-code-indent-offset 4)
+    (setq web-mode-css-indent-offset 4)
+    (setq web-mode-markup-indent-offset 4)
+    )
+
+  (add-hook 'web-mode-hook 'my-web-hook)
   (add-hook 'c-mode-hook 'my-tab-hook)
   (add-hook 'c++-mode 'my-tab-hook)
   (add-hook 'js2-mode-hook 'my-tab-hook)
+
+  (add-to-list 'auto-mode-alist '("\\.php$" . my-php-setup))
   )
 
 (defun dotspacemacs/user-config ()
