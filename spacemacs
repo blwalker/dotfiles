@@ -41,7 +41,7 @@ values."
 	 markdown
 	 org
 	 osx
-	 ;; php
+	 php
    rust
 	 sql
 	 ;; themes-megapack
@@ -272,9 +272,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
    )
 
   (defun my-c-hook ()
+    (c-set-style "blw")
+    (c-set-offset 'substatement-open '0)
+    (c-set-offset 'case-label '+)
+    (setq c-basic-offset 4
+          c-indent-level 4)
     (my-tab-hook)
-    (setq c-basic-offset 4)
-    (setq c-indent-level 4)
     )
 
   (defun my-web-hook ()
@@ -284,6 +287,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (setq web-mode-markup-indent-offset 4)
     )
 
+  (add-hook 'php-mode-hook 'my-tab-hook)
   (add-hook 'web-mode-hook 'my-web-hook)
   (add-hook 'c-mode-hook 'my-tab-hook)
   (add-hook 'c++-mode 'my-tab-hook)
@@ -310,3 +314,17 @@ you should place you code here."
   (setq custom-file (file-truename (concat dotspacemacs-directory ".custom.el")))
   (load custom-file)
   )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (which-key web-mode use-package toc-org tide restart-emacs racer pug-mode persp-mode osx-dictionary orgit org org-plus-contrib org-download omnisharp neotree move-text mmm-mode info+ indent-guide hide-comnt help-fns+ helm-projectile helm-make helm-gitignore request helm-c-yasnippet helm-ag go-eldoc gitattributes-mode git-link expand-region exec-path-from-shell evil-surround evil-nerd-commenter evil-mc evil-matchit evil-ediff evil-anzu csharp-mode company-statistics clang-format cargo rust-mode auto-compile packed ace-window auto-complete smartparens highlight evil flycheck go-mode company helm helm-core multiple-cursors avy skewer-mode js2-mode simple-httpd magit magit-popup git-commit with-editor async alert yasnippet haml-mode dash spacemacs-theme ws-butler window-numbering web-beautify volatile-highlights vi-tilde-fringe uuidgen undo-tree typescript-mode toml-mode tangotango-theme tagedit sql-indent spaceline smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder rainbow-mode rainbow-identifiers rainbow-delimiters quelpa popwin phpunit phpcbf php-extras php-auto-yasnippets pcre2el pbcopy paradox osx-trash org-projectile org-present org-pomodoro org-bullets open-junk-file markdown-toc magit-gitflow macrostep lorem-ipsum log4e livid-mode linum-relative link-hint less-css-mode launchctl json-mode js2-refactor js-doc ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-mode-manager helm-flx helm-descbinds helm-css-scss helm-company goto-chg google-translate golden-ratio go-guru gnuplot gntp gitignore-mode gitconfig-mode git-timemachine git-messenger gh-md flycheck-rust flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-search-highlight-persist evil-numbers evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args eval-sexp-fu emmet-mode elisp-slime-nav dumb-jump drupal-mode disaster diminish darkburn-theme csv-mode company-web company-tern company-go company-emacs-eclim company-c-headers column-enforce-mode color-identifiers-mode coffee-mode cmake-mode clean-aindent-mode bind-key auto-yasnippet auto-highlight-symbol anzu aggressive-indent adaptive-wrap ace-link ace-jump-helm-line ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
