@@ -311,8 +311,6 @@ you should place you code here."
 	   (sp-pair "\\\"" nil :actions :rem)))
 
   (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
-  (setq custom-file (file-truename (concat dotspacemacs-directory ".custom.el")))
-  (load custom-file)
   )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
