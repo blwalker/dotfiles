@@ -31,40 +31,41 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-	 ;; ----------------------------------------------------------------
-	 ;; Example of useful layers you may want to use right away.
-	 ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-	 ;; <M-m f e R> (Emacs style) to install them.
-	 ;; ----------------------------------------------------------------
-	 auto-completion
-	 ;; better-defaults
-	 (c-c++ :variables
-	    c-c++-default-mode-for-headers 'c++-mode)
-	 colors
-	 csharp
-	 csv
-	 emacs-lisp
-	 git
-	 (go :variables
-	    go-tab-width 4)
-	 html
-	 java
-	 javascript
-	 markdown
-	 org
-	 osx
-	 php
+   ;; ----------------------------------------------------------------
+   ;; Example of useful layers you may want to use right away.
+   ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+   ;; <M-m f e R> (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
+   auto-completion
+   ;; better-defaults
+   (c-c++ :variables
+      c-c++-default-mode-for-headers 'c++-mode)
+   colors
+   csharp
+   csv
+   emacs-lisp
+   git
+   (go :variables
+      go-tab-width 4)
+   helm
+   html
+   java
+   javascript
+   markdown
+   org
+   osx
+   php
    rust
-	 sql
-	 themes-megapack
-	 typescript
-	 ;; (shell :variables
-	 ;;		   shell-default-height 30
-	 ;;		   shell-default-position 'bottom)
-	 ;; spell-checking
-	 syntax-checking
-	 ;; version-control
-	 )
+   sql
+   themes-megapack
+   typescript
+   ;; (shell :variables
+   ;;		   shell-default-height 30
+   ;;		   shell-default-position 'bottom)
+   ;; spell-checking
+   syntax-checking
+   ;; version-control
+   )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -105,7 +106,7 @@ values."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update nil
+   dotspacemacs-check-for-update t
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
@@ -151,10 +152,10 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-							   :size 18
-							   :weight normal
-							   :width normal
-							   :powerline-scale 1.1)
+                               :size 18
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -377,13 +378,13 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
   (eval-after-load 'smartparens
-	'(progn
-	   (sp-pair "(" nil :actions :rem)
-	   (sp-pair "[" nil :actions :rem)
-	   (sp-pair "{" nil :actions :rem)
-	   (sp-pair "'" nil :actions :rem)
-	   (sp-pair "\"" nil :actions :rem)
-	   (sp-pair "\\\"" nil :actions :rem)))
+    '(progn
+       (sp-pair "(" nil :actions :rem)
+       (sp-pair "[" nil :actions :rem)
+       (sp-pair "{" nil :actions :rem)
+       (sp-pair "'" nil :actions :rem)
+       (sp-pair "\"" nil :actions :rem)
+       (sp-pair "\\\"" nil :actions :rem)))
 
   (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
   )
