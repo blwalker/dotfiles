@@ -2,10 +2,6 @@ if v:progname =~? "evim"
   finish
 endif
 
-if v:version >= 700
-	execute pathogen#infect()
-endif
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
