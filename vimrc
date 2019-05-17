@@ -47,6 +47,8 @@ if has("autocmd")
 
   autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  autocmd FileType yml setlocal ts=2 sw=2
+  autocmd FileType yaml setlocal ts=2 sw=2
   augroup END
 endif
 
